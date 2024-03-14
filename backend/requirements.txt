@@ -1,0 +1,12 @@
+# LLM
+langchain
+langchain-openai
+langchain-community
+langchain-core
+
+# Build up the FAST API
+uvicorn
+gunicorn
+fastapi
+pydantic
+pydantic-settings
