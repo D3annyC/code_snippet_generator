@@ -5,6 +5,7 @@ services:
     build: backend/.
     ports:
       - "8000:8000"
+      - "11434:11434"
 
   frontend:
     build: frontend/.

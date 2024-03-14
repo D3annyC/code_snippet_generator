@@ -16,9 +16,15 @@ EXPOSE 8000
 ENV MODEL_NAME mistral
 
 # Run ollama to pull the model
-RUN apt-get update && apt-get install -y curl && \
-    bash -c "$(curl -fsSL https://ollama.com/install.sh)" && \
-    ollama pull --cpu $MODEL_NAME
+RUN apt-get update && apt-get install -y curl
+
+RUN curl -fsSL https://ollama.com/install.sh -o install_ollama.sh
+
+RUN bash install_ollama.sh
+
+RUN ollama serve
+
+RUN ollama pull $MODEL_NAME
     
 # Run the application
 CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--reload"]

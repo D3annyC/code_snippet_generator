@@ -144,3 +144,12 @@ The LLM model `Mistral` is chosen for its exceptional ability to understand and 
 
 References: 1. [LLM Analysis](https://artificialanalysis.ai/models)
 
+## Docker Usage
+
+NB! To run the Docker, please make sure you have NVIDIA GPU and CUDA installed, also setup environment follow this (link)[https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker].
+
+To run docker containers for frontend and backend application, please run the following command:
+
+```bash
+docker compose up
+```
