@@ -1,0 +1,77 @@
+<div class="code-snippet-generator-layout">
+  <h2>Code Snippet Generator</h2>
+
+  <!-- Generate Code Snippet -->
+  <div class="form-group" [hidden]="hiddenGenerateCode">
+    <form [formGroup]="generateCodeSnippetForm">
+      <div class="language-selector">
+        <label for="codeLanguage">Select Language:</label>
+        <select formControlName="code_language" id="codeLanguage" class="form-control">
+          <option value="Python" selected>Python</option>
+          <option value="C++">C++</option>
+          <option value="Java">Java</option>
+          <option value="C#">C#</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="GO Lang">GO Lang</option>
+        </select>
+      </div>
+      <div class="prompt-enter">
+        <label for="codePrompt">Enter Prompt:</label>
+        <textarea formControlName="code_prompt" id="codePrompt" rows="6" cols="70" class="form-control"
+          style="resize: none"></textarea>
+      </div>
+      <button type="submit" (click)="generateCode()" [disabled]="disableGenerateCode">
+        Generate Code
+      </button>
+    </form>
+  </div>
+
+  <!-- Give feedback code -->
+  <div class="form-group" [hidden]="hiddenFeedbackCode">
+    <form [formGroup]="feedbackForm">
+      <div class="prompt-enter">
+        <label for="feedbackPrompt">Enter Prompt for feedback:</label>
+        <textarea formControlName="feedback_instructions" id="feedbackPrompt" rows="6" cols="70" class="form-control"
+          style="resize: none"></textarea>
+      </div>
+
+      <div class="feedback-buttons">
+
+        <button type="submit" (click)="feedbackCode()" [disabled]="disableFeedbackCode">
+          Give Feedback
+        </button>
+        <button type="submit" (click)="reset()">Reset</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- When generating code snippet, show waiting message -->
+  @if (isGenerateCode==true) {
+  <div class="loading-message">
+    <p>Generating code snippet, please wait...</p>
+  </div>
+  }
+
+  <!-- Show the code snippet -->
+  @if (generated_code()) {
+  <div class="code-snippet">
+    <pre><code [highlight]="generated_code()??''"></code></pre>
+  </div>
+  <button (click)="executeCode()" [disabled]="disableExecuteCode">
+    Execute Code
+  </button>
+  }
+
+  <!-- Executing code -->
+  @if (isExecutingCode==true) {
+  <div class="loading-message">
+    <p>Executing code, please wait...</p>
+  </div>
+  } @if(executed_result()){
+  <div class="executed-result">
+    <label for="executed-result">Executed Result:</label>
+    <pre><code [highlight]="executed_result()??''"></code></pre>
+  </div>
+  }
+</div>
