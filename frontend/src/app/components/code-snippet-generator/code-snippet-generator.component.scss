@@ -1,0 +1,86 @@
+.code-snippet-generator-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Added to center elements vertically */
+  width: 60%; /* Adjusted width to 60% of the window */
+  margin: 0 auto; /* Added to center the layout horizontally */
+}
+
+.form-group {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #f5f5f5;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+}
+
+.code-snippet, .executed-result {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #f5f5f5;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+}
+
+.loading-message {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: rgba(245, 245, 245, 0.5); /* Adjusted for transparency */
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  text-align: center; /* Centering the text */
+}
+
+.code-snippet pre, .executed-result pre {
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+}
+
+.prompt-enter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block; /* Added to ensure buttons are block-level elements */
+  margin-left: auto; /* Added to center the button */
+  margin-right: auto; /* Added to center the button */
+}
+
+button[disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.language-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.feedback-buttons {
+  display: flex;
+  padding: 4px;
+}
+
+
